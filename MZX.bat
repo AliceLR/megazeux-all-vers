@@ -244,6 +244,6 @@ EXIT /B 0
 
 :WIN
 pushd "%BASE%\%DIR%"
-%EXEC% %PARAMS%
+"%BASE%\%DIR%\%EXEC%" %PARAMS%
 popd
 EXIT /B 0
