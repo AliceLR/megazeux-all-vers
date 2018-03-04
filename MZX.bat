@@ -8,11 +8,16 @@ if "%1" == "" (
 SET BASE=%~dp0
 SET EXEC=megazeux
 SET VER=%1
-SHIFT
-GOTO v%VER%
 
-ECHO Invalid version.
-EXIT /B 0
+set PARAMS=
+:pars
+SHIFT
+IF "%1" == "" GOTO v%VER%
+set PARAMS=%PARAMS% "%1"
+GOTO pars
+
+
+:: Specific versions
 
 :v2.51
 set DIR=mzx251
@@ -230,11 +235,16 @@ goto WIN
 :: Execute MZX
 
 :DOS
-%BASE%\dosbox\DOSBox.exe -noconsole -c "cycles 30000" -c "mount C: %BASE%\%DIR%" -c C: -c %EXEC% -c exit
+"%BASE%\dosbox\DOSBox.exe" -noconsole -c "cycles 30000" -c "mount C: \"%BASE%\%DIR%\"" -c C: -c %EXEC% -c exit
+IF EXIST stderr.txt (
+	del stderr.txt
+	del stdout.txt
+)
 EXIT /B 0
 
 :WIN
-pushd %BASE%\%DIR%
-%EXEC%
+pushd "%BASE%\%DIR%"
+echo %PARAMS%
+%EXEC% %PARAMS%
 popd
 EXIT /B 0
