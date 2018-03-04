@@ -1,6 +1,6 @@
 #!/bin/bash
 
-basepath=$(pwd)
+basepath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function run
 {
