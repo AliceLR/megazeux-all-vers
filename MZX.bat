@@ -5,6 +5,7 @@ if "%1" == "" (
 	EXIT /B 0
 )
 
+SET BASE=%~dp0
 SET EXEC=megazeux
 SET VER=%1
 SHIFT
@@ -229,11 +230,11 @@ goto WIN
 :: Execute MZX
 
 :DOS
-dosbox\DOSBox.exe -noconsole -c "cycles 30000" -c "mount C: %~dp0\%DIR%" -c C: -c %EXEC% -c exit
+%BASE%\dosbox\DOSBox.exe -noconsole -c "cycles 30000" -c "mount C: %BASE%\%DIR%" -c C: -c %EXEC% -c exit
 EXIT /B 0
 
 :WIN
-pushd %~dp0%DIR%
+pushd %BASE%\%DIR%
 %EXEC%
 popd
 EXIT /B 0

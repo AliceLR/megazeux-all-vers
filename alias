@@ -1,8 +1,10 @@
 #!/bin/bash
 
+basepath=$(pwd)
+
 function run
 {
-	($(pwd)/MZX.bat $1 $@ & )
+	($basepath/MZX.bat $1 $@ & )
 
 	# Sleep briefly to let any MZX startup messages pass
 	sleep .1
