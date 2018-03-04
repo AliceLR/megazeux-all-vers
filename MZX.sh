@@ -281,6 +281,8 @@ esac
 # Execute MZX
 
 if [ $DOS = 1 ]; then
+	# Fix MSYS2 paths
+	BASE=${BASE/#"/c"/c:}
 	"$BASE/dosbox/DOSBox.exe" -noconsole -c "cycles 30000" -c "mount C: \"$BASE/$DIR\"" -c C: -c $EXEC -c exit
 	if [ -f "stderr.txt" ]; then rm -f stderr.txt; fi
 	if [ -f "stdout.txt" ]; then rm -f stdout.txt; fi
