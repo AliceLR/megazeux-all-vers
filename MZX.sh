@@ -283,7 +283,17 @@ esac
 if [ $DOS = 1 ]; then
 	# Fix MSYS2 paths
 	BASE=${BASE/#"/c"/c:}
-	"$BASE/dosbox/DOSBox.exe" -noconsole -c "cycles 30000" -c "mount C: \"$BASE/$DIR\"" -c C: -c $EXEC -c exit
+
+	# Pedantry
+	BASE=${BASE/"/"/\\}
+
+	# Also, [name] has to be first, or it won't work
+	"$BASE/dosbox/DOSBox.exe" \
+	"$BASE\\$DIR\\$EXEC.exe" \
+	-noconsole \
+	-exit \
+	-conf "$BASE/dosbox/config/dosbox.conf"
+
 	if [ -f "stderr.txt" ]; then rm -f stderr.txt; fi
 	if [ -f "stdout.txt" ]; then rm -f stdout.txt; fi
 fi

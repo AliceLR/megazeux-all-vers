@@ -235,7 +235,20 @@ goto WIN
 :: Execute MZX
 
 :DOS
-"%BASE%\dosbox\DOSBox.exe" -noconsole -c "cycles 30000" -c "mount C: \"%BASE%\%DIR%\"" -c C: -c %EXEC% -c exit
+:: DOSBox will ignore the custom config file when running from a .bat for
+:: whatever reason, so enter it manually.
+
+:: DOSBox will also ignore the autolock setting at runtime, so .bat is stuck
+:: with an annoying setting always turned on!
+
+"%BASE%\dosbox\DOSBox.exe" ^
+ "%BASE%\%DIR%\%EXEC%.exe" ^
+ -c "cycles 20000" ^
+ -c "autolock false" ^
+ -noconsole ^
+ -exit ^
+ -conf "%BASE%\config\dosbox.conf"
+
 IF EXIST stderr.txt (
 	del stderr.txt
 	del stdout.txt
