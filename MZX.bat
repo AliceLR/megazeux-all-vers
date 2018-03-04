@@ -179,7 +179,7 @@ set DIR=mzx282-x86
 goto WIN
 
 :v2.82b
-set DIR=mzx282b-x64
+set DIR=mzx282b-x86
 goto WIN
 
 :v2.83
