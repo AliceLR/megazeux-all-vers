@@ -1,0 +1,65 @@
+#!/bin/bash
+
+function run
+{
+	($(pwd)/MZX.bat $1 $@ & )
+
+	# Sleep briefly to let any MZX startup messages pass
+	sleep .1
+}
+
+alias 251="run 2.51"
+alias 251s1="run 2.51s1"
+alias 251s2="run 2.51s2"
+alias 251s3="run 2.51s3"
+alias 251s31="run 2.51s3.1"
+alias 251s32="run 2.51s3.2"
+alias 26="run 2.6"
+alias 260="run 2.6"
+alias 261="run 2.61"
+alias 262="run 2.62"
+alias 262b="run 2.62b"
+alias 265="run 2.65"
+alias 268="run 2.68"
+alias 269="run 2.69"
+alias 269b="run 2.69b"
+alias 269c="run 2.69c"
+alias 270="run 2.70"
+
+# These aren't hard to find, but are generally unneccessary.
+#alias 280="run 2.80"
+#alias 280b="run 2.80b"
+#alias 280c="run 2.80c"
+
+alias 280d="run 2.80d"
+alias 280e="run 2.80e"
+alias 280f="run 2.80f"
+alias 280g="run 2.80g"
+alias 280h="run 2.80h"
+
+alias 281="run 2.81"
+alias 281b="run 2.81b"
+alias 281c="run 2.81c"
+alias 281d="run 2.81d"
+alias 281e="run 2.81e"
+alias 281f="run 2.81f"
+alias 281g="run 2.81g"
+alias 281h="run 2.81h"
+
+alias 282="run 2.82"
+alias 282b="run 2.82b"
+
+alias 283="run 2.83"
+
+alias 284="run 2.84"
+alias 284b="run 2.84b"
+alias 284c="run 2.84c"
+
+alias 290="run 2.90"
+alias 290b="run 2.90b"
+alias 290c="run 2.90c"
+alias 290d="run 2.90d"
+
+alias 291="run 2.91"
+alias 291b="run 2.91b"
+alias 291c="run 2.91c"

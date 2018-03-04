@@ -1,0 +1,10 @@
+Usage:
+
+1) "make -j8" to download and install every MZX version.
+2) "source alias" to set up the MZX version aliases.
+3) Do one of these to run an MZX version:
+
+a. Use the batch file directly (cmd):	MZX 2.51
+b. Use the alias (bash):		251
+
+The alias will be the same as the version number but without any decimal points.
