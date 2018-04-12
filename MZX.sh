@@ -282,17 +282,14 @@ esac
 
 if [ $DOS = 1 ]; then
 	# Fix MSYS2 paths
-	BASE=${BASE/#"/c"/c:}
-
-	# Pedantry
-	BASE=${BASE/"/"/\\}
+	REALBASE="`cygpath -w $BASE`"
 
 	# Also, [name] has to be first, or it won't work
 	"$BASE/dosbox/DOSBox.exe" \
-	"$BASE\\$DIR\\$EXEC.exe" \
+	"$REALBASE\\$DIR\\$EXEC.exe" \
 	-noconsole \
 	-exit \
-	-conf "$BASE/dosbox/config/dosbox.conf"
+	-conf "$REALBASE\\config\\dosbox.conf"
 
 	if [ -f "stderr.txt" ]; then rm -f stderr.txt; fi
 	if [ -f "stdout.txt" ]; then rm -f stdout.txt; fi
