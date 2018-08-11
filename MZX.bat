@@ -19,6 +19,14 @@ GOTO pars
 
 :: Specific versions
 
+:v1.00g
+set DIR=mzx100g
+goto DOS
+
+:v1.02
+set DIR=mzx102
+goto DOS
+
 :v2.51
 set DIR=mzx251
 goto DOS

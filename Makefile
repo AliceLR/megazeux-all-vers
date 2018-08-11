@@ -1,9 +1,9 @@
 .PHONY: all clean
 
 mzx_vers := \
-  mzx251  mzxs1b  mzxs2b  mzxs3b  mzxs31b mzxs32  \
-  mzx26   mzx261  mzx262  mzx262b mzx265  mzx268  \
-  mzx269  mzx269b mzx269c mzx270 \
+  mzx100g mzx102  mzx251  mzxs1b  mzxs2b  mzxs3b  \
+  mzxs31b mzxs32  mzx26   mzx261  mzx262  mzx262b \
+  mzx265  mzx268  mzx269  mzx269b mzx269c mzx270  \
   \
   mzx280d mzx280e mzx280f mzx280g mzx280h mzx281  \
   mzx281b mzx281c mzx281d mzx281e mzx281f mzx281g \
@@ -31,6 +31,16 @@ dosbox:
 	@wget -cq https://netix.dl.sourceforge.net/project/dosbox/dosbox/0.74/DOSBox0.74-win32-installer.exe
 	@7z x DOSBox0.74-win32-installer.exe -odosbox > /dev/null
 	@rm -f DOSBox0.74-win32-installer.exe
+
+# MZX 1.xx must be configured with command line flags.
+# Should be "-ms -sp -m6" but this version of DOSBox doesn't have a way to pass
+# them without causing other issues.
+
+mzx100g:
+	${DL} 861 830a5bb7c514e97af1789076301b56e560522bf10c0dafa7da5cb45b115fb348 $@
+
+mzx102:
+	${DL} 859 2d33af4f787ae86f4516b0c8cdda197afca53ecfc489d0aefcd4ad5584a546fa $@
 
 mzx251:
 	${DL} 180 29c23652aba770cedd349fcba37e4c507678e8825094516cedf03e0fa8543292 $@

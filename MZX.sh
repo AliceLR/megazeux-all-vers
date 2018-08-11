@@ -19,6 +19,16 @@ WIN=0
 
 case $VER in
 
+	"1.00g")
+		DIR="mzx100g"
+		DOS=1
+		;;
+
+	"1.02")
+		DIR="mzx102"
+		DOS=1
+		;;
+
 	"2.51")
 		DIR="mzx251"
 		DOS=1

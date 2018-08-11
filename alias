@@ -10,6 +10,8 @@ function run
 	sleep .1
 }
 
+alias 100g="run 1.00g $@"
+alias 102="run 1.02 $@"
 alias 251="run 2.51 $@"
 alias 251s1="run 2.51s1 $@"
 alias 251s2="run 2.51s2 $@"
