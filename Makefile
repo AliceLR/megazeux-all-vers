@@ -1,9 +1,10 @@
 .PHONY: all clean
 
 mzx_vers := \
-  mzx100g mzx102  mzx251  mzxs1b  mzxs2b  mzxs3b  \
-  mzxs31b mzxs32  mzx26   mzx261  mzx262  mzx262b \
-  mzx265  mzx268  mzx269  mzx269b mzx269c mzx270  \
+  mzx100g mzx102  mzx202  mzx207  mzx251   mzxs1b \
+  mzxs2b  mzxs3b  mzxs31b mzxs32  smzx100a mzxak  \
+  mzx26   mzx261  mzx262  mzx262b mzx265   mzx268 \
+  mzx269  mzx269b mzx269c mzx270  \
   \
   mzx280d mzx280e mzx280f mzx280g mzx280h mzx281  \
   mzx281b mzx281c mzx281d mzx281e mzx281f mzx281g \
@@ -14,6 +15,7 @@ mzx_vers := \
   mzx291b-x64 mzx291c-x64 mzx291d-x64
 
 DL      := @./dl
+CFG-202 := @cp config/dos-202/MEGAZEUX.CFG
 CFG-ON  := @cp config/dos-working/MEGAZEUX.CFG
 CFG-OFF := @cp config/dos-disable/MEGAZEUX.CFG
 
@@ -42,6 +44,18 @@ mzx100g:
 mzx102:
 	${DL} 859 2d33af4f787ae86f4516b0c8cdda197afca53ecfc489d0aefcd4ad5584a546fa $@
 
+mzx202:
+	${DL} 858 f8d11bcbf244f1e130a8cfa00ea0659d587c3c243cd477c254d68725b50521a0 $@
+	${CFG-202} $@
+
+# MZX 2.07 has an incomplete copy of Caverns without the .mzx or title mod :-[
+
+mzx207: mzx202
+	${DL} 969 f4923ae5546f36cd6416e70b6de5a6adf5eafb8feed58afe63cf005b94f4905f $@
+	${CFG-202} $@
+	@cp mzx202/CAVERNS.MZX mzx207
+	@cp mzx202/CV_TITLE.MOD mzx207
+
 mzx251:
 	${DL} 180 29c23652aba770cedd349fcba37e4c507678e8825094516cedf03e0fa8543292 $@
 	${CFG-ON} $@
@@ -69,6 +83,17 @@ mzxs31b:
 mzxs32:
 	${DL} 175 e43f875e85c3edee9a079857df846a768a606bf488e22b80c51e3aa408fe7ba3 $@
 	${CFG-OFF} $@
+
+# Note: the original SMZX fork. SMZX mode isn't supported by DOSBox 0.74, though.
+
+smzx100a:
+#	${DL} 1491 50349a0fad2fcf6b12476f3f71d8c058fd5805f983158ad134988e9252bc4501 $@
+#	@{CFG-OFF} $@
+
+# Note: a fork only partial supported by official versions. Comes preconfigured.
+
+mzxak:
+	${DL} 1490 9c7948df6b579b2405297ea4d780d6e9693aaa3c6e62542e8e8c7c21f6227f60 $@
 
 mzx26:
 	${DL} 174 94e96ddfe119c266ae1deb66e3c3a0d33d21302f4921f77b4baec20838069435 $@

@@ -29,6 +29,16 @@ case $VER in
 		DOS=1
 		;;
 
+	"2.02")
+		DIR="mzx202"
+		DOS=1
+		;;
+
+	"2.07")
+		DIR="mzx207"
+		DOS=1
+		;;
+
 	"2.51")
 		DIR="mzx251"
 		DOS=1
@@ -61,6 +71,12 @@ case $VER in
 	"2.51s3.2")
 		EXEC="mzxs32"
 		DIR="mzxs32"
+		DOS=1
+		;;
+
+	"ak")
+		EXEC="MZXak"
+		DIR="mzxak"
 		DOS=1
 		;;
 

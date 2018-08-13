@@ -27,6 +27,14 @@ goto DOS
 set DIR=mzx102
 goto DOS
 
+:v2.02
+set DIR=mzx202
+goto DOS
+
+:v2.07
+set DIR=mzx207
+goto DOS
+
 :v2.51
 set DIR=mzx251
 goto DOS
@@ -54,6 +62,11 @@ goto DOS
 :v2.51s3.2
 set EXEC=mzxs32
 set DIR=mzxs32
+goto DOS
+
+:vak
+set EXEC=mzxak
+set DIR=mzxak
 goto DOS
 
 :v2.6
