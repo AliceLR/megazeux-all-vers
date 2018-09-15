@@ -12,7 +12,7 @@ mzx_vers := \
   mzx281h-x86 mzx282-x86  mzx282b-x86 mzx283-x64  \
   mzx284-x64  mzx284b-x64 mzx284c-x64 mzx290-x64  \
   mzx290b-x64 mzx290c-x64 mzx290d-x64 mzx291-x64  \
-  mzx291b-x64 mzx291c-x64 mzx291d-x64
+  mzx291b-x64 mzx291c-x64 mzx291d-x64 mzx291e-x64
 
 DL      := @./dl
 CFG-202 := @cp config/dos-202/MEGAZEUX.CFG
@@ -223,3 +223,6 @@ mzx291c-x64:
 
 mzx291d-x64:
 	${DL} 2259 5266423e6f85da0dc204304d26666aad34e63b84134df72b2306def6ae86a391 $@
+
+mzx291e-x64:
+	${DL} 2287 27aee24c3e79fc2f2c8b48123d8c4557bab12c60f82ed3836c9ab75426a7ffb5 $@
