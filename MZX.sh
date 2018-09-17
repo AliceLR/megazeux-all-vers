@@ -311,6 +311,11 @@ case $VER in
 		DIR="mzx291e-x64"
 		WIN=1
 		;;
+
+	"2.91f")
+		DIR="mzx291f-x64"
+		WIN=1
+		;;
 esac
 
 
