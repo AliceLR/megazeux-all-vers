@@ -23,9 +23,9 @@ are released.
 up the MZX version aliases.
 * Do one of these to run an MZX version:
 
-a) Use the batch file directly (cmd):	MZX 2.51
-b) Use the shell file directly (bash):	./MZX.sh 2.51
-c) Use the alias (bash):		251
+1) Use the batch file directly (cmd):	`MZX 2.51`
+2) Use the shell file directly (bash):	`./MZX.sh 2.51`
+3) Use the alias (bash):		`251`
 
 The alias will be the same as the version number but without any decimal points.
 Using the alias version is recommended because the batch version does not
