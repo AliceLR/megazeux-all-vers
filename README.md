@@ -19,7 +19,7 @@ are released.
 
 ## To run a version of MegaZeux:
 
-* *OPTIONAL*: Put `source [this folder]/alias` in your MSYS2 .bash_rc file to set
+* *OPTIONAL*: Put `source [this folder]/alias` in your MSYS2 .bashrc file to set
 up the MZX version aliases.
 * Do one of these to run an MZX version:
 
