@@ -13,7 +13,7 @@ mzx_vers := \
   mzx284-x64  mzx284b-x64 mzx284c-x64 mzx290-x64  \
   mzx290b-x64 mzx290c-x64 mzx290d-x64 mzx291-x64  \
   mzx291b-x64 mzx291c-x64 mzx291d-x64 mzx291e-x64 \
-  mzx291f-x64
+  mzx291f-x64 mzx291g-x64
 
 src     := source
 
@@ -285,3 +285,7 @@ mzx291e-x64:
 mzx291f-x64:
 	${DL} 2314 8539bed03acf9ccaac54d620d8e8c0f7f2ad1d1cf15d08fa4530e9cdda5b304d $@
 	${DL} 2324 92594dcdcefcff517029918e842786448eb2f278b42d188f7e3db84e322111a7 ${src}/mzx291f tar.xz
+
+mzx291g-x64:
+	${DL} 2335 683846776865c8ed27b5589cf0e3a19a6d716aace3b75728cdb617ad7127cbd5 $@
+	${DL} 2342 fac0dfe1d0a6568e4338a6d9825db4d266033addfde50029feb68ad7bd5d7c4e ${src}/mzx291g tar.xz
