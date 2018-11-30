@@ -1,0 +1,38 @@
+#!/bin/bash
+
+if [ -z $1 ] || [ -z $2 ]; then
+	echo "USAGE: ./dl_direct [url] [folder after extraction]"
+	exit
+fi
+
+format=$3
+[ -z $format ] && format=zip
+
+rm -f $2.$format
+rm -rf $2
+
+echo "DL: $2"
+wget -cq $1 -O $2.$format
+
+case $format in
+	zip)
+		7za x $2.zip -o$2 > /dev/null
+		;;
+
+	tar.gz)
+		mkdir -p $2
+		tar -xzf $2.tar.gz -C $2
+		;;
+
+	tar.bz2)
+		mkdir -p $2
+		tar -xjf $2.tar.bz2 -C $2
+		;;
+
+	tar.xz)
+		mkdir -p $2
+		tar -xJf $2.tar.xz -C $2
+		;;
+esac
+
+rm -f $2.$format

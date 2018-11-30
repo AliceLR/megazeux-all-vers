@@ -268,6 +268,10 @@ goto WIN
 set DIR=mzx291g-x64
 goto WIN
 
+:v2.91h
+set DIR=mzx291h-x64
+goto WIN
+
 
 :: Execute MZX
 

@@ -13,11 +13,12 @@ mzx_vers := \
   mzx284-x64  mzx284b-x64 mzx284c-x64 mzx290-x64  \
   mzx290b-x64 mzx290c-x64 mzx290d-x64 mzx291-x64  \
   mzx291b-x64 mzx291c-x64 mzx291d-x64 mzx291e-x64 \
-  mzx291f-x64 mzx291g-x64
+  mzx291f-x64 mzx291g-x64 mzx291h-x64
 
 src     := source
 
-DL      := @./dl
+DL      := @./dl_vault
+DIRECT  := @./dl_direct
 CFG-202 := @cp config/dos-202/MEGAZEUX.CFG
 CFG-ON  := @cp config/dos-working/MEGAZEUX.CFG
 CFG-OFF := @cp config/dos-disable/MEGAZEUX.CFG
@@ -289,3 +290,7 @@ mzx291f-x64:
 mzx291g-x64:
 	${DL} 2335 683846776865c8ed27b5589cf0e3a19a6d716aace3b75728cdb617ad7127cbd5 $@
 	${DL} 2342 fac0dfe1d0a6568e4338a6d9825db4d266033addfde50029feb68ad7bd5d7c4e ${src}/mzx291g tar.xz
+
+mzx291h-x64:
+	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91h/mzx291h-x64.zip $@
+	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91h/mzx291hsrc.tar.xz ${src}/mzx291h tar.xz
