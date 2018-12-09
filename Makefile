@@ -13,7 +13,7 @@ mzx_vers := \
   mzx284-x64  mzx284b-x64 mzx284c-x64 mzx290-x64  \
   mzx290b-x64 mzx290c-x64 mzx290d-x64 mzx291-x64  \
   mzx291b-x64 mzx291c-x64 mzx291d-x64 mzx291e-x64 \
-  mzx291f-x64 mzx291g-x64 mzx291h-x64
+  mzx291f-x64 mzx291g-x64 mzx291h-x64 mzx291i-x64
 
 src     := source
 
@@ -294,3 +294,7 @@ mzx291g-x64:
 mzx291h-x64:
 	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91h/mzx291h-x64.zip $@
 	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91h/mzx291hsrc.tar.xz ${src}/mzx291h tar.xz
+
+mzx291i-x64:
+	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91i/mzx291i-x64.zip $@
+	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91i/mzx291isrc.tar.xz ${src}/mzx291i tar.xz
