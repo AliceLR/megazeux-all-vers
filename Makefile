@@ -10,13 +10,15 @@ mzx_vers := \
   mzx281b mzx281c mzx281d mzx281e mzx281f mzx281g \
   \
   mzx281h-x86 mzx282-x86  mzx282b-x86 mzx283-x64  \
-  mzx284-x64  mzx284b-x64 mzx284c-x64 mzx290-x64  \
-  mzx290b-x64 mzx290c-x64 mzx290d-x64 mzx291-x64  \
-  mzx291b-x64 mzx291c-x64 mzx291d-x64 mzx291e-x64 \
-  mzx291f-x64 mzx291g-x64 mzx291h-x64 mzx291i-x64
+  mzx284-x64  mzx284b-x64 mzx284c-x64 \
+  mzx290-x64  mzx290b-x64 mzx290c-x64 mzx290d-x64 \
+  mzx291-x64  mzx291b-x64 mzx291c-x64 mzx291d-x64 \
+  mzx291e-x64 mzx291f-x64 mzx291g-x64 mzx291h-x64 \
+  mzx291i-x64
 
 src     := source
 
+URLBASE := https://github.com/AliceLR/megazeux/releases/download
 DL      := @./dl_vault
 DIRECT  := @./dl_direct
 CFG-202 := @cp config/dos-202/MEGAZEUX.CFG
@@ -236,65 +238,65 @@ mzx283-x64:
 	${DL} 1811 29e3d8113b61ace422821040df94f21e36b36bc1c41b4222821c3b06159aea70 ${src}/mzx283 tar.bz2
 
 mzx284-x64:
-	${DL} 1920 466cc2189cc5ec627a48d8e18519d35a302e2b7550d548f460e5b946c602fa58 $@
-	${DL} 1923 3dccc5eb1111a275687bdda024b559ce2047af9874795f438c7943e5b201b022 ${src}/mzx284 tar.xz
+	${DIRECT} ${URLBASE}/v2.84/mzx284-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.84/mzx284src.tar.xz ${src}/mzx284 tar.xz
 
 mzx284b-x64:
-	${DL} 1944 14b821637116607aff0249f2a42344afce3439ebc0dd19decc73febad9f25d08 $@
-	${DL} 1947 7640b93f4a3bc0749fd7a065a6759ce0ad9f1af130e55c31120e2a4da56cc416 ${src}/mzx284b tar.xz
+	${DIRECT} ${URLBASE}/v2.84b/mzx284b-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.84b/mzx284bsrc.tar.xz ${src}/mzx284b tar.xz
 
 mzx284c-x64:
-	${DL} 1981 2b6e3cafda911fc0f88cc532fc2a10e903ace10608abddcd5c1125ec1874c5d3 $@
-	${DL} 1984 5eb9f4a5007030886ddf323471ef8fd7f25c7734cc7c0ffb73906f116667efe8 ${src}/mzx284c tar.xz
+	${DIRECT} ${URLBASE}/v2.84c/mzx284c-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.84c/mzx284csrc.tar.xz ${src}/mzx284c tar.xz
 
 mzx290-x64:
-	${DL} 2157 69156694646c87979bb86583d575487216bbfb9a575fd6b8f37d2b2ccd0b670b $@
-	${DL} 2155 31b8c234187df95e5fb5233a74134a18dba558fa351e7e0cc12285eaae74b3d7 ${src}/mzx290 tar.xz
+	${DIRECT} ${URLBASE}/v2.90/mzx290-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.90/mzx290src.tar.xz ${src}/mzx290 tar.xz
 
 mzx290b-x64:
-	${DL} 2164 289d407bc88dc6ab7196b4ab27fd5b170419df7178641c5eb8e36447739705ab $@
-	${DL} 2162 b4758e1ca02d42830e059119283fe6c473bcb2f67277e3dbca74278c434bc0e2 ${src}/mzx290b tar.xz
+	${DIRECT} ${URLBASE}/v2.90b/mzx290b-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.90b/mzx290bsrc.tar.xz ${src}/mzx290b tar.xz
 
 mzx290c-x64:
-	${DL} 2169 e5de8dd670920d59829e9acd8dd1bb70c77d52d5f8bb9a8718c993e61e43f719 $@
-	${DL} 2168 0de1aa76ce92cdc7db0c51f58e1561206b30939b5cc7a82705cc7921348ca4c6 ${src}/mzx290c tar.xz
+	${DIRECT} ${URLBASE}/v2.90c/mzx290c-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.90c/mzx290csrc.tar.xz ${src}/mzx290c tar.xz
 
 mzx290d-x64:
-	${DL} 2177 a35f8dfa68493c65271d54c020a22299b0f5e2ed49c0ada58d35bcde238373e5 $@
-	${DL} 2176 3a625a362872daab88a3532500d241f527e11ab43355ef977b9666fa4eb1a93a ${src}/mzx290d tar.xz
+	${DIRECT} ${URLBASE}/v2.90d/mzx290d-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.90d/mzx290dsrc.tar.xz ${src}/mzx290d tar.xz
 
 mzx291-x64:
-	${DL} 2187 d41fbbd0eaeb741e521169e83440ac740625453fb03d07c18aee1dd9884039aa $@
-	${DL} 2197 6ba768b8143a3964cf66e66807f0f68e2f3569b96fcf7dd5432636d85b6f93a7 ${src}/mzx291 tar.xz
+	${DIRECT} ${URLBASE}/v2.91/mzx291-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91/mzx291src.tar.xz ${src}/mzx291 tar.xz
 
 mzx291b-x64:
-	${DL} 2221 72ec2298574afcd9906c6ab61834095bc3c8710cb4d52ffdd4e1b9c9551d7c0a $@
-	${DL} 2220 c05c7f519720685b836d988047c189fdeaf2da84733f8b146954be761c749aa3 ${src}/mzx291b tar.xz
+	${DIRECT} ${URLBASE}/v2.91b/mzx291b-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91b/mzx291bsrc.tar.xz ${src}/mzx291b tar.xz
 
 mzx291c-x64:
-	${DL} 2245 6d1e48dbb78ed91ccc106bad865c2f48ac44bd8b100535b6631ad82aac8699d6 $@
-	${DL} 2248 173ab207a63500eeaf79325be42764246d37173bff4c7a07d038bd9eb3e1e27c ${src}/mzx291c tar.xz
+	${DIRECT} ${URLBASE}/v2.91c/mzx291c-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91c/mzx291csrc.tar.xz ${src}/mzx291c tar.xz
 
 mzx291d-x64:
-	${DL} 2259 5266423e6f85da0dc204304d26666aad34e63b84134df72b2306def6ae86a391 $@
-	${DL} 2264 b6b6c5e6259bed6155c2c513d729197534261ab83a6c4bb16be4d5586beacabb ${src}/mzx291d tar.xz
+	${DIRECT} ${URLBASE}/v2.91d/mzx291d-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91d/mzx291dsrc.tar.xz ${src}/mzx291d tar.xz
 
 mzx291e-x64:
-	${DL} 2287 27aee24c3e79fc2f2c8b48123d8c4557bab12c60f82ed3836c9ab75426a7ffb5 $@
-	${DL} 2298 391370f6c76e9a6fe9de88f92e3649552b147647d3e3dd9faa52280a0f7af4e2 ${src}/mzx291e tar.xz
+	${DIRECT} ${URLBASE}/v2.91e/mzx291e-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91e/mzx291esrc.tar.xz ${src}/mzx291e tar.xz
 
 mzx291f-x64:
-	${DL} 2314 8539bed03acf9ccaac54d620d8e8c0f7f2ad1d1cf15d08fa4530e9cdda5b304d $@
-	${DL} 2324 92594dcdcefcff517029918e842786448eb2f278b42d188f7e3db84e322111a7 ${src}/mzx291f tar.xz
+	${DIRECT} ${URLBASE}/v2.91f/mzx291f-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91f/mzx291fsrc.tar.xz ${src}/mzx291f tar.xz
 
 mzx291g-x64:
-	${DL} 2335 683846776865c8ed27b5589cf0e3a19a6d716aace3b75728cdb617ad7127cbd5 $@
-	${DL} 2342 fac0dfe1d0a6568e4338a6d9825db4d266033addfde50029feb68ad7bd5d7c4e ${src}/mzx291g tar.xz
+	${DIRECT} ${URLBASE}/v2.91g/mzx291g-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91g/mzx291gsrc.tar.xz ${src}/mzx291g tar.xz
 
 mzx291h-x64:
-	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91h/mzx291h-x64.zip $@
-	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91h/mzx291hsrc.tar.xz ${src}/mzx291h tar.xz
+	${DIRECT} ${URLBASE}/v2.91h/mzx291h-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91h/mzx291hsrc.tar.xz ${src}/mzx291h tar.xz
 
 mzx291i-x64:
-	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91i/mzx291i-x64.zip $@
-	${DIRECT} https://github.com/AliceLR/megazeux/releases/download/v2.91i/mzx291isrc.tar.xz ${src}/mzx291i tar.xz
+	${DIRECT} ${URLBASE}/v2.91i/mzx291i-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91i/mzx291isrc.tar.xz ${src}/mzx291i tar.xz
