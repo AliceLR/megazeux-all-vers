@@ -14,7 +14,7 @@ mzx_vers := \
   mzx290-x64  mzx290b-x64 mzx290c-x64 mzx290d-x64 \
   mzx291-x64  mzx291b-x64 mzx291c-x64 mzx291d-x64 \
   mzx291e-x64 mzx291f-x64 mzx291g-x64 mzx291h-x64 \
-  mzx291i-x64
+  mzx291i-x64 mzx291j-x64
 
 src     := source
 
@@ -300,3 +300,7 @@ mzx291h-x64:
 mzx291i-x64:
 	${DIRECT} ${URLBASE}/v2.91i/mzx291i-x64.zip $@
 	${DIRECT} ${URLBASE}/v2.91i/mzx291isrc.tar.xz ${src}/mzx291i tar.xz
+
+mzx291j-x64:
+        ${DIRECT} ${URLBASE}/v2.91j/mzx291j-x64.zip $@
+        ${DIRECT} ${URLBASE}/v2.91j/mzx291jsrc.tar.xz ${src}/mzx291j tar.xz
