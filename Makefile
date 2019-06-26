@@ -302,5 +302,5 @@ mzx291i-x64:
 	${DIRECT} ${URLBASE}/v2.91i/mzx291isrc.tar.xz ${src}/mzx291i tar.xz
 
 mzx291j-x64:
-        ${DIRECT} ${URLBASE}/v2.91j/mzx291j-x64.zip $@
-        ${DIRECT} ${URLBASE}/v2.91j/mzx291jsrc.tar.xz ${src}/mzx291j tar.xz
+	${DIRECT} ${URLBASE}/v2.91j/mzx291j-x64.zip $@
+	${DIRECT} ${URLBASE}/v2.91j/mzx291jsrc.tar.xz ${src}/mzx291j tar.xz
