@@ -73,12 +73,13 @@ mzx251:
 	${DL} 180 baf0f723a9d74dea39dbcb430bfc730226de5539f975494f3edc99c31d7e22ca ${src}/$@
 	${CFG-ON} $@
 
-# Disable sound to bypass an IRQ error.
+# This release doesn't bother packing the audio drivers, so copy parts of 2.51 in.
 
-mzxs1b:
+mzxs1b: mzx251
 	${DL} 179 34e28cf3317ba798cc1711f6506061b33b6ce427efcd6b9c110b5d7c9d47b76e $@
 	${DL} 179 77c3a14d351323ea1f7b483558e3c131e79e529fe0d3d074bf0e8601a7b23155 ${src}/$@
-	${CFG-OFF} $@
+	@cp -n mzx251/* $@
+	${CFG-ON} $@
 
 mzxs2b:
 	${DL} 195 a26fe6d70bfc298d39588fb4f729f1cd75026aa0bad9060615f9539a2b35c46e $@
@@ -95,21 +96,23 @@ mzxs31b:
 	${DL} 199 ad0b4c674658a75ff9ce9df2f24f44925b519bbea26c45d78496681c61dd05cc ${src}/$@
 	${CFG-ON} $@
 
-# Disable sound to bypass an IRQ error.
+# This release doesn't bother packing the audio drivers, so copy parts of 2.51 in.
 
-mzxs32:
+mzxs32: mzx251
 	${DL} 175 e43f875e85c3edee9a079857df846a768a606bf488e22b80c51e3aa408fe7ba3 $@
 	${DL} 175 449678070982b725775f528d7ae5f87b8e834039cfcfae2b058380e0758a7349 ${src}/$@
-	${CFG-OFF} $@
+	@cp -n mzx251/* $@
+	${CFG-ON} $@
 
 # Note: the original SMZX fork. SMZX mode isn't supported by DOSBox 0.74, though.
 
-smzx100a:
+smzx100a: mzx251
 #	${DL} 1491 50349a0fad2fcf6b12476f3f71d8c058fd5805f983158ad134988e9252bc4501 $@
 #	${DL} 1491 a5b0e9518c8cadf1b5d0c5bd1733f2ec75b1b60817ff5ed2156a3a283e3e97a6 ${src}/$@
-#	@{CFG-OFF} $@
+#	@cp -n mzx251/* $@
+#	@{CFG-ON} $@
 
-# Note: a fork only partial supported by official versions. Comes preconfigured.
+# Note: a fork only partially supported by official versions. Comes preconfigured.
 
 mzxak:
 	${DL} 1490 9c7948df6b579b2405297ea4d780d6e9693aaa3c6e62542e8e8c7c21f6227f60 $@
