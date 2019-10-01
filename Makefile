@@ -314,4 +314,4 @@ mzx292-x64:
 
 mzx292b-x64:
 	${DIRECT} ${URLBASE}/v2.92b/mzx292b-x64.zip $@
-	${DIRECT} ${URLBASE}/v2.92b/mzx292bsrc-r1.tar.xz ${src}/mzx292b tar.xz
+	${DIRECT} ${URLBASE}/v2.92b/mzx292bsrc-r2.tar.xz ${src}/mzx292b tar.xz
