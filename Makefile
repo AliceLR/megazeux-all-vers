@@ -319,4 +319,4 @@ mzx292b-x64:
 
 mzx292c-x64:
 	${DIRECT} ${URLBASE}/v2.92c/mzx292c-x64.zip $@
-	${DIRECT} ${URLBASE}/v2.92c/mzx292csrc.tar.xz ${src}/mzx292c tar.xz
+	${DIRECT} ${URLBASE}/v2.92c/mzx292csrc-r1.tar.xz ${src}/mzx292c tar.xz
