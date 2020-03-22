@@ -80,4 +80,4 @@ alias 291j="run 2.91j $@"
 
 alias 292="run 2.92 $@"
 alias 292b="run 2.92b $@"
-alias 292b="run 2.92c $@"
+alias 292c="run 2.92c $@"
