@@ -26,6 +26,9 @@ CFG-202 := @cp config/dos-202/MEGAZEUX.CFG
 CFG-ON  := @cp config/dos-working/MEGAZEUX.CFG
 CFG-OFF := @cp config/dos-disable/MEGAZEUX.CFG
 
+#DOSBOXURL := https://netix.dl.sourceforge.net/project/dosbox/dosbox/0.74/DOSBox0.74-win32-installer.exe
+DOSBOXURL := https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox0.74-3-win32-installer.exe/download
+
 all: dosbox ${src} ${mzx_vers}
 
 clean:
@@ -38,9 +41,9 @@ clean:
 
 dosbox:
 	@echo "Preparing DOSBox..."
-	@wget -cq https://netix.dl.sourceforge.net/project/dosbox/dosbox/0.74/DOSBox0.74-win32-installer.exe
-	@7z x DOSBox0.74-win32-installer.exe -odosbox > /dev/null
-	@rm -f DOSBox0.74-win32-installer.exe
+	@wget -cq ${DOSBOXURL} -O DOSBox-win32-installer.exe
+	@7z x DOSBox-win32-installer.exe -odosbox > /dev/null
+	@rm -f DOSBox-win32-installer.exe
 
 ${src}:
 	@mkdir -p $@
