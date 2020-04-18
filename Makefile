@@ -6,6 +6,7 @@ mzx_vers := \
   mzx26   mzx261  mzx262  mzx262b mzx265   mzx268 \
   mzx269  mzx269b mzx269c mzx270  \
   \
+  mzx280  mzx280b mzx280c \
   mzx280d mzx280e mzx280f mzx280g mzx280h mzx281  \
   mzx281b mzx281c mzx281d mzx281e mzx281f mzx281g \
   \
@@ -179,6 +180,19 @@ mzx270:
 	${DL} 650 376539e346c78097557378d3feba8f6ad925d0b9780a290f60680f76fc31e36a $@
 	${DL} 650 eacc7d9a9bb61e43cf2ca06f9ce14ba0610110c42c3304217bf334c941586fcb ${src}/$@
 	${CFG-ON} $@
+
+mzx280:
+	${DL} 2535 96ce0ba95e0b6df5cbd1c1c14c9c2d0319b4b0f0b7b12e2414d993c693510074 $@
+	${DL} 2535 dd6dec5be4458ff7566ff7e623a45fe25c12ff4000236b963c9c0b71d45bebf2 ${src}/$@
+
+mzx280b:
+	${DL} 2536 3c4b4670e05b65dfa3acff3e73631e75d9d1eedbe8d0216a3949c0e3c6233869 $@
+	${DL} 2536 84c836c4b281b4137cebaee411c6852ec9c80fff1a235b1c63a808f1c8e91547 ${src}/$@
+
+# FIXME: not the original build :-(
+mzx280c:
+	${DL} 2537 d3d28426f365d6d3f3a2652b78ede148d47d80135ba08025709d1eebfb5a6489 $@
+	${DL} 2537 7d41c1fbca44233e6148520be511cb7ab328bc7044eea11faaac99490e35676c ${src}/$@
 
 mzx280d:
 	${DL} 783 1dfc43be68fed90de631821a3275ff84b9261b657504950a66d17978f3f9cd0f $@

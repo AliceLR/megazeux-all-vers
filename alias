@@ -33,11 +33,9 @@ alias 269b="run 2.69b $@"
 alias 269c="run 2.69c $@"
 alias 270="run 2.70 $@"
 
-# These aren't hard to find, but are generally unneccessary.
-#alias 280="run 2.80 $@"
-#alias 280b="run 2.80b $@"
-#alias 280c="run 2.80c $@"
-
+alias 280="run 2.80 $@"
+alias 280b="run 2.80b $@"
+alias 280c="run 2.80c $@"
 alias 280d="run 2.80d $@"
 alias 280e="run 2.80e $@"
 alias 280f="run 2.80f $@"
