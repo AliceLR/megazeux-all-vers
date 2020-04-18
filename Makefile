@@ -243,7 +243,7 @@ mzx281g:
 
 mzx281h-x86:
 	${DL} ${URLBASE}/v2.81h/mzx281h-x86.zip $@
-	${DL} ${URLBASE}/v2.81h/mzx281hsrc.tar.bz2 ${src}/$@ tar.bz2
+	${DL} ${URLBASE}/v2.81h/mzx281hsrc.tar.bz2 ${src}/mzx281h tar.bz2
 
 mzx282-x86:
 	${DMZX} 1555 8b6caf6b6f492330c3c783b703529a437b44c6107bbcfd36b85adbffa02cca92 $@
