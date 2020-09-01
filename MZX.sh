@@ -29,6 +29,11 @@ case $VER in
 		DOS=1
 		;;
 
+	"1.03")
+		DIR="mzx103"
+		DOS=1
+		;;
+
 	"2.02")
 		DIR="mzx202"
 		DOS=1

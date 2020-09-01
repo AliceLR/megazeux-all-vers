@@ -27,6 +27,10 @@ goto DOS
 set DIR=mzx102
 goto DOS
 
+:v1.03
+set DIR=mzx103
+goto DOS
+
 :v2.02
 set DIR=mzx202
 goto DOS

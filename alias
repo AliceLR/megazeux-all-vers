@@ -12,6 +12,7 @@ function run
 
 alias 100g="run 1.00g $@"
 alias 102="run 1.02 $@"
+alias 103="run 1.03 $@"
 alias 202="run 2.02 $@"
 alias 207="run 2.07 $@"
 alias 251="run 2.51 $@"

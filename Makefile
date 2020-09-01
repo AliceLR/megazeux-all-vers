@@ -1,7 +1,8 @@
 .PHONY: all clean
 
 mzx_vers := \
-  mzx100g mzx102  mzx202  mzx207  mzx251   mzxs1b \
+  mzx100g mzx102  mzx103 \
+  mzx202  mzx207  mzx251   mzxs1b \
   mzxs2b  mzxs3b  mzxs31b mzxs32  smzx100a mzxak  \
   mzx26   mzx261  mzx262  mzx262b mzx265   mzx268 \
   mzx269  mzx269b mzx269c mzx270  \
@@ -58,6 +59,9 @@ mzx100g:
 
 mzx102:
 	${DMZX} 859 2d33af4f787ae86f4516b0c8cdda197afca53ecfc489d0aefcd4ad5584a546fa $@
+
+mzx103:
+	${DMZX} 2591 14aaf8d561d70a50b71f54420b86423981c5ace4392ab20f879f99f434e04f30 $@
 
 mzx202:
 	${DMZX} 858 f8d11bcbf244f1e130a8cfa00ea0659d587c3c243cd477c254d68725b50521a0 $@
