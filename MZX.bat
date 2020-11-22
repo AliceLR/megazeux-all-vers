@@ -304,6 +304,10 @@ goto WIN
 set DIR=mzx292e-x64
 goto WIN
 
+:v2.92f
+set DIR=mzx292f-x64
+goto WIN
+
 :: Execute MZX
 
 :DOS
