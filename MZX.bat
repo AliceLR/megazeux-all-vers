@@ -23,6 +23,10 @@ GOTO pars
 set DIR=mzx100g
 goto DOS
 
+:v1.01
+set DIR=mzx101
+goto DOS
+
 :v1.02
 set DIR=mzx102
 goto DOS
@@ -35,8 +39,16 @@ goto DOS
 set DIR=mzx202
 goto DOS
 
+:v2.04
+set DIR=mzx204
+goto DOS
+
 :v2.07
 set DIR=mzx207
+goto DOS
+
+:v2.50
+set DIR=mzx250
 goto DOS
 
 :v2.51

@@ -1,8 +1,8 @@
 .PHONY: all clean
 
 mzx_vers := \
-  mzx100g mzx102  mzx103 \
-  mzx202  mzx207  mzx251   mzxs1b \
+  mzx100g mzx101  mzx102  mzx103 \
+  mzx202  mzx204  mzx207  mzx250  mzx251   mzxs1b \
   mzxs2b  mzxs3b  mzxs31b mzxs32  smzx100a mzxak  \
   mzx26   mzx261  mzx262  mzx262b mzx265   mzx268 \
   mzx269  mzx269b mzx269c mzx270  \
@@ -11,7 +11,7 @@ mzx_vers := \
   mzx280d mzx280e mzx280f mzx280g mzx280h mzx281  \
   mzx281b mzx281c mzx281d mzx281e mzx281f mzx281g \
   \
-  mzx281h-x86 mzx282-x86  mzx282b-x86 mzx283-x64  \
+  mzx281h-x86 mzx282-x86  mzx282b-x86 mzx283-x86  \
   mzx284-x64  mzx284b-x64 mzx284c-x64 \
   mzx290-x64  mzx290b-x64 mzx290c-x64 mzx290d-x64 \
   mzx291-x64  mzx291b-x64 mzx291c-x64 mzx291d-x64 \
@@ -22,7 +22,6 @@ mzx_vers := \
 src     := source
 
 URLBASE := https://github.com/AliceLR/megazeux/releases/download
-DMZX    := @./dl_vault
 DL      := @./dl_direct
 CFG-202 := @cp config/dos-202/MEGAZEUX.CFG
 CFG-ON  := @cp config/dos-working/MEGAZEUX.CFG
@@ -55,25 +54,36 @@ ${src}:
 # them without causing other issues.
 
 mzx100g:
-	${DMZX} 861 830a5bb7c514e97af1789076301b56e560522bf10c0dafa7da5cb45b115fb348 $@
+	${DL} ${URLBASE}/misc/mzx100g.zip $@
+
+mzx101:
+	${DL} ${URLBASE}/misc/mzx101.zip $@
 
 mzx102:
-	${DMZX} 859 2d33af4f787ae86f4516b0c8cdda197afca53ecfc489d0aefcd4ad5584a546fa $@
+	${DL} ${URLBASE}/misc/mzx102.zip $@
 
 mzx103:
-	${DMZX} 2591 14aaf8d561d70a50b71f54420b86423981c5ace4392ab20f879f99f434e04f30 $@
+	${DL} ${URLBASE}/misc/mzx103.zip $@
 
 mzx202:
-	${DMZX} 858 f8d11bcbf244f1e130a8cfa00ea0659d587c3c243cd477c254d68725b50521a0 $@
+	${DL} ${URLBASE}/misc/mzx202.zip $@
+	${CFG-202} $@
+
+mzx204:
+	${DL} ${URLBASE}/misc/mzx204.zip $@
 	${CFG-202} $@
 
 # MZX 2.07 has an incomplete copy of Caverns without the .mzx or title mod :-[
 
-mzx207: mzx202
-	${DMZX} 969 f4923ae5546f36cd6416e70b6de5a6adf5eafb8feed58afe63cf005b94f4905f $@
+mzx207: mzx204
+	${DL} ${URLBASE}/misc/mzx207.zip $@
 	${CFG-202} $@
-	@cp mzx202/CAVERNS.MZX mzx207
-	@cp mzx202/CV_TITLE.MOD mzx207
+	@cp mzx204/CAVERNS.MZX mzx207
+	@cp mzx204/CV_TITLE.MOD mzx207
+
+mzx250:
+	${DL} ${URLBASE}/misc/mzx250.zip $@
+	${CFG-ON} $@
 
 # This is the first version with source code.
 
@@ -116,16 +126,16 @@ mzxs32: mzx251
 # Note: the original SMZX fork. SMZX mode isn't supported by DOSBox 0.74, though.
 
 smzx100a: mzx251
-#	${DMZX} 1491 50349a0fad2fcf6b12476f3f71d8c058fd5805f983158ad134988e9252bc4501 $@
-#	${DMZX} 1491 a5b0e9518c8cadf1b5d0c5bd1733f2ec75b1b60817ff5ed2156a3a283e3e97a6 ${src}/$@
+#	${DL} ${URLBASE}/misc/smzx100a.zip $@
+#	${DL} ${URLBASE}/misc/smzxsrc.zip ${src}/$@
 #	@cp -n mzx251/* $@
 #	@{CFG-ON} $@
 
 # Note: a fork only partially supported by official versions. Comes preconfigured.
 
 mzxak:
-	${DMZX} 1490 9c7948df6b579b2405297ea4d780d6e9693aaa3c6e62542e8e8c7c21f6227f60 $@
-	${DMZX} 1490 4e3b8a733b937f8216081e96ba1a2d0874c9e604ed34340ac1003e18b8740f0a ${src}/$@
+	${DL} ${URLBASE}/misc/mzxak.zip $@
+	${DL} ${URLBASE}/misc/mzxaksrc.zip ${src}/$@
 
 mzx26:
 	${DL} ${URLBASE}/v2.60/mzx26.zip $@
@@ -250,16 +260,16 @@ mzx281h-x86:
 	${DL} ${URLBASE}/v2.81h/mzx281hsrc.tar.bz2 ${src}/mzx281h tar.bz2
 
 mzx282-x86:
-	${DMZX} 1555 8b6caf6b6f492330c3c783b703529a437b44c6107bbcfd36b85adbffa02cca92 $@
-	${DMZX} 1555 ea14fc910037b56d728ad0b1e20df086eb851f1fcece9e645a19fa8298d06379 ${src}/mzx282 tar.bz2
+	${DL} ${URLBASE}/misc/mzx282-x86.zip $@
+	${DL} ${URLBASE}/misc/mzx282src.tar.bz2 ${src}/mzx282 tar.bz2
 
 mzx282b-x86:
-	${DMZX} 1651 d4a8a2907205a5bbda1903ed5bacbb719e9e3928ae219bc2bd770398fdeaba2e $@
-	${DMZX} 1651 e2ad36ece11cdcb2bfb00e35d5a161b8c951c3f0c0a2bea27d532e2eaa4ea28b ${src}/mzx282b tar.bz2
+	${DL} ${URLBASE}/misc/mzx282b-x86.zip $@
+	${DL} ${URLBASE}/misc/mzx282bsrc.tar.bz2 ${src}/mzx282b tar.bz2
 
-mzx283-x64:
-	${DMZX} 1673 abd2513a8d2a2b296efb3af411a7c8e35076b6dd5d4eb79b23e641b5ea100d32 $@
-	${DMZX} 1811 29e3d8113b61ace422821040df94f21e36b36bc1c41b4222821c3b06159aea70 ${src}/mzx283 tar.bz2
+mzx283-x86:
+	${DL} ${URLBASE}/misc/mzx283-x86.zip $@
+	${DL} ${URLBASE}/misc/mzx283src.tar.bz2 ${src}/mzx283 tar.bz2
 
 mzx284-x64:
 	${DL} ${URLBASE}/v2.84/mzx284-x64.zip $@

@@ -24,6 +24,11 @@ case $VER in
 		DOS=1
 		;;
 
+	"1.01")
+		DIR="mzx101"
+		DOS=1
+		;;
+
 	"1.02")
 		DIR="mzx102"
 		DOS=1
@@ -39,8 +44,18 @@ case $VER in
 		DOS=1
 		;;
 
+	"2.04")
+		DIR="mzx204"
+		DOS=1
+		;;
+
 	"2.07")
 		DIR="mzx207"
+		DOS=1
+		;;
+
+	"2.50")
+		DIR="mzx250"
 		DOS=1
 		;;
 

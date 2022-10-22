@@ -11,10 +11,13 @@ function run
 }
 
 alias 100g="run 1.00g $@"
+alias 101="run 1.01 $@"
 alias 102="run 1.02 $@"
 alias 103="run 1.03 $@"
 alias 202="run 2.02 $@"
+alias 204="run 2.04 $@"
 alias 207="run 2.07 $@"
+alias 250="run 2.50 $@"
 alias 251="run 2.51 $@"
 alias 251s1="run 2.51s1 $@"
 alias 251s2="run 2.51s2 $@"
