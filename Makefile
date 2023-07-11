@@ -30,7 +30,11 @@ CFG-OFF := @cp config/dos-disable/MEGAZEUX.CFG
 #DOSBOXURL := https://netix.dl.sourceforge.net/project/dosbox/dosbox/0.74/DOSBox0.74-win32-installer.exe
 DOSBOXURL := https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox0.74-3-win32-installer.exe/download
 
-all: dosbox ${src} ${mzx_vers}
+all: ${src} ${mzx_vers}
+
+ifneq (${MSYSTEM},)
+all: dosbox
+endif
 
 clean:
 	@rm -rf ${mzx_vers}
