@@ -18,6 +18,7 @@ mzx_vers := \
   mzx291e-x64 mzx291f-x64 mzx291g-x64 mzx291h-x64 \
   mzx291i-x64 mzx291j-x64 mzx292-x64  mzx292b-x64 \
   mzx292c-x64 mzx292d-x64 mzx292e-x64 mzx292f-x64 \
+  mzx293-x64 \
 
 src     := source
 
@@ -366,3 +367,7 @@ mzx292e-x64:
 mzx292f-x64:
 	${DL} ${URLBASE}/v2.92f/mzx292f-x64.zip $@
 	${DL} ${URLBASE}/v2.92f/mzx292fsrc.tar.xz ${src}/mzx292f tar.xz
+
+mzx293-x64:
+	${DL} ${URLBASE}/v2.93/mzx293-x64.zip $@
+	${DL} ${URLBASE}/v2.93/mzx293src.tar.xz ${src}/mzx293 tar.xz
