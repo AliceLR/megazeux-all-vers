@@ -32,3 +32,6 @@ Using the alias version is recommended because the batch version does not
 currently allow the ability to pass command line options to port versions of
 MegaZeux.
 
+If `dosbox-x` is found in PATH in Linux, it will be preferred over `dosbox`.
+When DOSBox-X is used, Super MegaZeux *should* work with the EGA renderer
+with no extra work required (see config/dosbox.conf).

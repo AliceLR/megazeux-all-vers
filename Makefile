@@ -20,6 +20,21 @@ mzx_vers := \
   mzx292c-x64 mzx292d-x64 mzx292e-x64 mzx292f-x64 \
   mzx293-x64 mzx293b-x64 mzx293c-x64 \
 
+drivers := GUS.MSE PAS.MSE SB16.MSE SB1X.MSE SB2X.MSE SBPRO.MSE
+caverns := CAVERNS.MZX CV_BALON.MOD CV_BOSS.MOD CV_HEVEN.MOD \
+           CV_MAGIC.MOD CV_STORY.MOD CV_TECH.MOD CV_TITLE.MOD
+helpfil := MZX_HELP.FIL MZX_CMOD.FIL MZXBLANK.FIL
+
+fixes := \
+  $(foreach cav,${caverns},mzx207/${cav}) \
+  $(foreach mse,${drivers},mzxs1b/${mse}) \
+  $(foreach fil,${helpfil},mzxs1b/${fil}) \
+  $(foreach mse,${drivers},mzxs32/${mse}) \
+  $(foreach fil,${helpfil},mzxs32/${fil}) \
+  $(foreach mse,${drivers},smzx100a/${mse}) \
+  $(foreach fil,${helpfil},smzx100a/${fil}) \
+  mzx261/MZXBLANK.FIL
+
 src     := source
 
 URLBASE := https://github.com/AliceLR/megazeux/releases/download
@@ -31,7 +46,7 @@ CFG-OFF := @cp config/dos-disable/MEGAZEUX.CFG
 #DOSBOXURL := https://netix.dl.sourceforge.net/project/dosbox/dosbox/0.74/DOSBox0.74-win32-installer.exe
 DOSBOXURL := https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox0.74-3-win32-installer.exe/download
 
-all: ${src} ${mzx_vers}
+all: ${src} ${mzx_vers} ${fixes}
 
 ifneq (${MSYSTEM},)
 all: dosbox
@@ -80,11 +95,15 @@ mzx204:
 
 # MZX 2.07 has an incomplete copy of Caverns without the .mzx or title mod :-[
 
-mzx207: mzx204
+mzx207:
 	${DL} ${URLBASE}/misc/mzx207.zip $@
 	${CFG-202} $@
-	@cp mzx204/CAVERNS.MZX mzx207
-	@cp mzx204/CV_TITLE.MOD mzx207
+
+mzx207/%.MZX: mzx204/%.MZX | mzx204 mzx207
+	cp $^ $@
+
+mzx207/%.MOD: mzx204/%.MOD | mzx204 mzx207
+	cp $^ $@
 
 mzx250:
 	${DL} ${URLBASE}/misc/mzx250.zip $@
@@ -98,12 +117,18 @@ mzx251:
 	${CFG-ON} $@
 
 # This release doesn't bother packing the audio drivers, so copy parts of 2.51 in.
+# It is also missing the help files.
 
-mzxs1b: mzx251
+mzxs1b:
 	${DL} ${URLBASE}/v2.51s1/mzxs1b.zip $@
 	${DL} ${URLBASE}/v2.51s1/mzxs1s.zip ${src}/$@
-	@cp -n mzx251/* $@
 	${CFG-ON} $@
+
+mzxs1b/%.MSE: mzx251/%.MSE | mzx251 mzxs1b
+	cp $^ $@
+
+mzxs1b/%.FIL: mzx251/%.FIL | mzx251 mzxs1b
+	cp $^ $@
 
 mzxs2b:
 	${DL} ${URLBASE}/v2.51s2/mzxs2b.zip $@
@@ -121,20 +146,32 @@ mzxs31b:
 	${CFG-ON} $@
 
 # This release doesn't bother packing the audio drivers, so copy parts of 2.51 in.
+# It is also missing the help files.
 
-mzxs32: mzx251
+mzxs32:
 	${DL} ${URLBASE}/v2.51s3.2/mzxs32.zip $@
 	${DL} ${URLBASE}/v2.51s3.2/mzxs32src.zip ${src}/$@
-	@cp -n mzx251/* $@
 	${CFG-ON} $@
 
-# Note: the original SMZX fork. SMZX mode isn't supported by DOSBox 0.74, though.
+mzxs32/%.MSE: mzx251/%.MSE | mzx251 mzxs32
+	cp $^ $@
 
-smzx100a: mzx251
-#	${DL} ${URLBASE}/misc/smzx100a.zip $@
-#	${DL} ${URLBASE}/misc/smzxsrc.zip ${src}/$@
-#	@cp -n mzx251/* $@
-#	@{CFG-ON} $@
+mzxs32/%.FIL: mzxs31b/%.FIL | mzxs31b mzxs32
+	cp $^ $@
+
+# Note: the original SMZX fork. SMZX mode isn't supported by DOSBox 0.74, though.
+# Doesn't come with drivers or help files.
+
+smzx100a:
+	${DL} ${URLBASE}/misc/smzx100a.zip $@
+	${DL} ${URLBASE}/misc/smzxsrc.zip ${src}/$@
+	${CFG-ON} $@
+
+smzx100a/%.MSE: mzx251/%.MSE | mzx251 smzx100a
+	cp $^ $@
+
+smzx100a/%.FIL: mzxs31b/%.FIL | mzxs31b smzx100a
+	cp $^ $@
 
 # Note: a fork only partially supported by official versions. Comes preconfigured.
 
@@ -147,13 +184,15 @@ mzx26:
 	${DL} ${URLBASE}/v2.60/mzx26s.zip ${src}/$@
 	${CFG-ON} $@
 
-# MZX 2.61 has a corrupt mzxblank.fil, so copy the one from 2.6
+# MZX 2.61 has a missing mzxblank.fil, so copy the one from 2.6
 
-mzx261: mzx26
+mzx261:
 	${DL} ${URLBASE}/v2.61/mzx261.zip $@
 	${DL} ${URLBASE}/v2.61/mzx261s.zip ${src}/$@
 	${CFG-ON} $@
-	@cp mzx26/MZXBLANK.FIL mzx261
+
+mzx261/%.FIL: mzx26/%.FIL | mzx26 mzx261
+	cp $^ $@
 
 mzx262:
 	${DL} ${URLBASE}/v2.62/mzx262.zip $@

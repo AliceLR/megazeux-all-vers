@@ -80,6 +80,11 @@ set EXEC=mzxs32
 set DIR=mzxs32
 goto DOS
 
+:vsmzx
+set EXEC=smzx100a
+set DIR=smzx100a
+goto DOS
+
 :vak
 set EXEC=mzxak
 set DIR=mzxak

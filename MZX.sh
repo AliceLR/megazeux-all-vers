@@ -103,6 +103,12 @@ case $VER in
 		DOS=1
 		;;
 
+	"smzx")
+		EXEC="smzx100a.exe"
+		DIR="smzx100a"
+		DOS=1
+		;;
+
 	"ak")
 		EXEC="MZXak.exe"
 		DIR="mzxak"
@@ -424,7 +430,11 @@ if [ "$DOS" = "1" ]; then
 		REALEXEC="$REALBASE\\$DIR\\$EXEC"
 		CONF="$REALBASE\\config\\dosbox.conf"
 	else
-		DOSBOX="dosbox"
+		if command -v dosbox-x 1>/dev/null 2>/dev/null; then
+			DOSBOX="dosbox-x"
+		else
+			DOSBOX="dosbox"
+		fi
 		REALEXEC="$BASE/$DIR/$EXEC"
 		CONF="$BASE/config/dosbox.conf"
 	fi
